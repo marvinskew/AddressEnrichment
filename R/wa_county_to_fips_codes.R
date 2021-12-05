@@ -1,0 +1,48 @@
+
+wa_county_to_fips_codes= function(stateOfWA_county){
+  stateOfWA_county= str_trim(gsub("COUNTY", "", stateOfWA_county), side="both")
+  result<- dplyr::case_when((stateOfWA_county== toupper("Adams")) ~ "WA-1",
+                   (stateOfWA_county== toupper("Asotin")) ~ "WA-3",
+                   (stateOfWA_county== toupper("Benton")) ~ "WA-5",
+                   (stateOfWA_county== toupper("Chelan")) ~ "WA-7",
+                   (stateOfWA_county== toupper("Clallam")) ~ "WA-9",
+                   (stateOfWA_county== toupper("Clark")) ~ "WA-11",
+                   (stateOfWA_county== toupper("Columbia")) ~ "WA-13",
+                   (stateOfWA_county== toupper("Cowlitz")) ~ "WA-15",
+                   (stateOfWA_county== toupper("Douglas")) ~ "WA-17",
+                   (stateOfWA_county== toupper("Ferry")) ~ "WA-19",
+                   (stateOfWA_county== toupper("Franklin")) ~ "WA-21",
+                   (stateOfWA_county== toupper("Garfield")) ~ "WA-23",
+                   (stateOfWA_county== toupper("Grant")) ~ "WA-25",
+                   (stateOfWA_county== toupper("Grays Harbor")) ~ "WA-27",
+                   (stateOfWA_county== toupper("Island")) ~ "WA-29",
+                   (stateOfWA_county== toupper("Jefferson")) ~ "WA-31",
+                   (stateOfWA_county== toupper("King")) ~ "WA-33",
+                   (stateOfWA_county== toupper("Kitsap")) ~ "WA-35",
+                   (stateOfWA_county== toupper("Kittitas")) ~ "WA-37",
+                   (stateOfWA_county== toupper("Klickitat")) ~ "WA-39",
+                   (stateOfWA_county== toupper("Lewis")) ~ "WA-41",
+                   (stateOfWA_county== toupper("Lincoln")) ~ "WA-43",
+                   (stateOfWA_county== toupper("Mason")) ~ "WA-45",
+                   (stateOfWA_county== toupper("Okanogan")) ~ "WA-47",
+                   (stateOfWA_county== toupper("Pacific")) ~ "WA-49",
+                   (stateOfWA_county== toupper("Pend Oreille")) ~ "WA-51",
+                   (stateOfWA_county== toupper("Pierce")) ~ "WA-53",
+                   (stateOfWA_county== toupper("San Juan")) ~ "WA-55",
+                   (stateOfWA_county== toupper("Skagit")) ~ "WA-57",
+                   (stateOfWA_county== toupper("Skamania")) ~ "WA-59",
+                   (stateOfWA_county== toupper("Snohomish")) ~ "WA-61",
+                   (stateOfWA_county== toupper("Spokane")) ~ "WA-63",
+                   (stateOfWA_county== toupper("Stevens")) ~ "WA-65",
+                   (stateOfWA_county== toupper("Thurston")) ~ "WA-67",
+                   (stateOfWA_county== toupper("Unknown")) ~ "WA-999",
+                   (stateOfWA_county== toupper("Wahkiakum")) ~ "WA-69",
+                   (stateOfWA_county== toupper("Walla Walla")) ~ "WA-71",
+                   (stateOfWA_county== toupper("Whatcom")) ~ "WA-73",
+                   (stateOfWA_county== toupper("Whitman")) ~ "WA-75",
+                   (stateOfWA_county== toupper("Yakima")) ~ "WA-77",
+                   TRUE ~ "")
+  return(result)
+}
+
+
